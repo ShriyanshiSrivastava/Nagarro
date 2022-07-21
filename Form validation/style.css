@@ -1,0 +1,25 @@
+body{
+    background-color: aqua;
+    margin: 20px;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    justify-content: center;
+    position:relative;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-weight: 300;
+    background-color: pink;
+}
+
+.text-center{
+    display: flex;
+    flex-direction: row;
+    text-justify: distribute;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+}
