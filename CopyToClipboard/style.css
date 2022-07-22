@@ -1,0 +1,21 @@
+body{
+    background-color: lightcoral;
+}
+h1{
+    text-align: center;
+    background-color: blanchedalmond;
+}
+.one, .two, .three{
+    text-align: center;
+    
+    
+}
+.three, .two{
+    margin-top: 50px;
+}
+
+#btn{
+    color: white;
+    background-color: blueviolet;
+}
+
