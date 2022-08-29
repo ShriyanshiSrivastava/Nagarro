@@ -1,0 +1,73 @@
+<!--Section: Products v.3-->
+<section class="text-center mb-4">
+
+    <!--Grid row-->
+    <div class="row wow fadeIn">
+
+        <% let i = 1; %>
+
+        <% for (let product of products) { %>
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4">
+
+            <!--Card-->
+            <div class="card">
+
+                <!--Card image-->
+                <div class="view overlay">
+                    <img src="<%= product.url %>"
+                        class="card-img-top" alt="">
+                    <a href="/products/desc/<%= product.id %>">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <!--Card image-->
+
+                <!--Card content-->
+                <div class="card-body text-center">
+                    <!--Category & Title-->
+                    <a href="/products/desc/<%= product.id %>" class="grey-text">
+                        <h5><%= product.category %></h5>
+                    </a>
+                    <h5>
+                        <strong>
+                            <a href="/products/desc/<%= product.id %>" class="dark-grey-text"><%= product.name %>
+
+                                <% if (i % 4 === 1) { %>
+
+                                <span class="badge badge-pill danger-color">NEW</span>
+
+                                <% } else if (i % 4 === 3) { %>
+
+                                <span class="badge badge-pill primary-color">bestseller</span>
+
+                                <% } %>
+                                <% i++; %>
+
+                            </a>
+                        </strong>
+                    </h5>
+
+                    <h4 class="font-weight-bold blue-text">
+                        <strong>$<%= product.price %></strong>
+                    </h4>
+
+                    <div id="prod" hidden><%= product %></div>
+                    
+                </div>
+                <!--Card content-->
+
+            </div>
+            <!--Card-->
+
+        </div>
+        <!--Grid column-->
+
+        <% } %>
+
+    </div>
+    <!-- Grid row  -->
+
+</section>
+<!--Section: Products v.3-->

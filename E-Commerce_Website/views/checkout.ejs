@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Checkout</title>
+
+  <%- include('./partials/links') %>
+</head>
+
+<body class="grey lighten-3">
+
+  <%- include('./partials/navbar') %>
+
+    <!--Main layout-->
+    <main class="mt-5 pt-4">
+      <div class="container wow fadeIn">
+
+        <!-- Heading -->
+        <h2 class="my-5 h2 text-center">Checkout form</h2>
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-md-4 mb-4">
+
+            <!-- Heading -->
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted">Your cart</span>
+              <span id="totalItems" class="badge badge-secondary badge-pill">0</span>
+            </h4>
+
+            <%- include('./partials/cart') %>
+
+            <!-- Promo code -->
+            <form class="card p-2">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Promo code" aria-label="Recipient's username"
+                  aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-secondary btn-md waves-effect m-0" type="button">Redeem</button>
+                </div>
+              </div>
+            </form>
+            <!-- Promo code -->
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-8 mb-4">
+
+            <!--Card-->
+            <div class="card">
+
+              <!--Card content-->
+              <form action="/" id="checkoutForm"  class="card-body">
+
+                <!--Grid row-->
+                <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-6 mb-2">
+
+                    <!--firstName-->
+                    <div class="md-form ">
+                      <input type="text" id="firstName" name="firstName" class="form-control" required>
+                      <label for="firstName" class="">First name</label>
+                      <div class="invalid-feedback">
+                        First Name is required.
+                      </div>
+                    </div>
+
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-md-6 mb-2">
+
+                    <!--lastName-->
+                    <div class="md-form">
+                      <input type="text" id="lastName" name="lastName" class="form-control" required>
+                      <label for="lastName" class="">Last name</label>
+                      <div class="invalid-feedback">
+                        Last Name is required.
+                      </div>
+                    </div>
+
+                  </div>
+                  <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--email-->
+                <div class="md-form input-group pl-0 mb-5">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-envelope"></i></span>
+                  </div>
+                  <input type="text" class="form-control py-0" name="email" placeholder="Email"
+                    aria-describedby="basic-addon1" required>
+                  <div class="invalid-feedback">
+                    Email is required.
+                  </div>
+                </div>
+
+                <!--Phone Number-->
+                <div class="md-form input-group pl-0 mb-5">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-phone"></i></span>
+                  </div>
+                  <input type="text" class="form-control py-0" name="phoneNo" placeholder="Phone Number"
+                    aria-describedby="basic-addon1" required>
+                  <div class="invalid-feedback">
+                    Phone Number is required.
+                  </div>
+                </div>
+
+                <!--address-->
+                <div class="md-form mb-5">
+                  <input type="text" id="address" name="address" class="form-control" placeholder="1234 Main St"
+                    required>
+                  <label for="address" class="">Address</label>
+                  <div class="invalid-feedback">
+                    Adress is required.
+                  </div>
+                </div>
+
+                <!--city-->
+                <div class="md-form mb-5">
+                  <input type="text" id="city" name="city" class="form-control" placeholder="your city name" required>
+                  <label for="city" class="">City</label>
+                  <div class="invalid-feedback">
+                    City is required.
+                  </div>
+                </div>
+
+                <!--Grid row-->
+                <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-lg-4 col-md-6 mb-4">
+
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" id="country" name="country" placeholder="" required>
+                    <div class="invalid-feedback">
+                      Please provide a Country.
+                    </div>
+
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-lg-4 col-md-6 mb-4">
+
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" id="state" name="state" placeholder="" required>
+                    <div class="invalid-feedback">
+                      Please provide a state.
+                    </div>
+
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-lg-4 col-md-6 mb-4">
+
+                    <label for="zipCode">Zip Code</label>
+                    <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="" required>
+                    <div class="invalid-feedback">
+                      Zip code required.
+                    </div>
+
+                  </div>
+                  <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <hr>
+
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="same-address">
+                  <label class="custom-control-label" for="same-address">Shipping address is the same as my billing
+                    address</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="save-info">
+                  <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                </div>
+
+                <!-- <%- include('./partials/card') %> -->
+
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+
+              </form>
+
+            </div>
+            <!--/.Card-->
+
+          </div>
+          <!--Grid column-->
+
+          <!-- cart column here -->
+
+        </div>
+        <!--Grid row-->
+
+      </div>
+    </main>
+    <!--Main layout-->
+
+    <%- include('./partials/footer')%>
+
+      <!-- SCRIPTS -->
+      <!-- JQuery -->
+      <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+      <!-- Bootstrap tooltips -->
+      <script type="text/javascript" src="js/popper.min.js"></script>
+      <!-- Bootstrap core JavaScript -->
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <!-- MDB core JavaScript -->
+      <script type="text/javascript" src="js/mdb.min.js"></script>
+      <!-- cart javascript -->
+      <script src="/js/cart.js"></script>
+      <!-- checkout JavaScript -->
+      <script src="/js/checkout.js"></script>
+      <!-- Initializations -->
+      <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+      </script>
+</body>
+
+</html>

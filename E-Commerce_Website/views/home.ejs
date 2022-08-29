@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+
+    <%- include('./partials/links') %>
+
+    <style type="text/css">
+        html,
+        body,
+        header,
+        .carousel {
+            height: 60vh;
+        }
+
+        @media (max-width: 740px) {
+
+            html,
+            body,
+            header,
+            .carousel {
+                height: 100vh;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+
+            html,
+            body,
+            header,
+            .carousel {
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include ('./partials/navbar')%>
+
+        <!--Carousel Wrapper-->
+        <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
+
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+            </ol>
+            <!--/.Indicators-->
+
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+
+                <!--First slide-->
+                <div class="carousel-item active">
+                    <div class="view"
+                        style="background-image: url('https://p1.pxfuel.com/preview/552/294/459/people-girl-woman-beauty-model-landscape.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+                    </div>
+                </div>
+                <!--/First slide-->
+
+                <!--Second slide-->
+                <div class="carousel-item">
+                    <div class="view"
+                        style="background-image: url('https://s3.ap-southeast-1.amazonaws.com/images.asianage.com/images/aa-Cover-1e44ovcai2nakikcamtl8t83f3-20190829163645.Medi.jpeg'); background-repeat: no-repeat; background-size: 100% 100%;">
+                    </div>
+                </div>
+                <!--/Second slide-->
+
+                <!--Third slide-->
+                <div class="carousel-item">
+                    <div class="view"
+                        style="background-image: url('https://3dlook.me/wp-content/uploads/2022/06/2265h921-11-1.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+                    </div>
+                </div>
+                <!--/Third slide-->
+
+            </div>
+            <!--/.Slides-->
+
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+
+        </div>
+        <!--/.Carousel Wrapper-->
+
+        <!--Main layout-->
+        <main>
+            <div class="container">
+
+                <%- include('./partials/category-navbar') %>
+
+                <%- include('./partials/products') %>
+
+            </div>
+        </main>
+        <!--Main layout-->
+
+        <%- include('./partials/footer') %>
+
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="/js/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="/js/mdb.min.js"></script>
+        <!-- cart javascript -->
+        <script src="/js/cart.js"></script>
+        <!-- Initializations -->
+        <script type="text/javascript">
+            // Animations initialization
+            new WOW().init();
+
+        </script>
+</body>
+
+</html>

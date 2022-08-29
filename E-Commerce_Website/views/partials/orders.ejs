@@ -1,0 +1,23 @@
+<!-- Orders -->
+<ul class="list-group mb-3 z-depth-1">
+
+    <% for(let order of orders) { %>
+
+        <a href="/orders/<%= order._id %>">
+            <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="text-dark text-center mr-3">
+                    <h6 class="my-0 text-primary"><span class="font-weight-bold">Order id : </span>
+                        <%= order._id %>
+                    </h6>
+                    <small class="text-muted"><span class="font-weight-bold">Created at : </span>
+                        <%= order.createdAt %>
+                    </small>
+                </div>
+                <span class="text-success"><span class="font-weight-bold">Order price : </span> $<%= order.totalPrice %>
+                        </span>
+            </li>
+        </a>
+
+        <% } %>
+</ul>
+<!-- Orders -->

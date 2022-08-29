@@ -1,0 +1,16 @@
+<!-- Order Items -->
+<ul class="list-group mb-3 z-depth-1">
+  <% for (let item of order.productItems) { %>
+    <a href="/products/desc/<%= item.product.id %>">
+      <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <img style="width: 15%; height: 15%" src="<%= item.product.url %>">
+        <div class="ml-3 mr-3 text-center">
+          <h6 class="my-0"><%= item.product.name %></h6>
+          <small class="text-muted"><span class="font-weight-bold">quantity : </span><%= item.quantity %></small>
+        </div>
+        <span class="text-muted"><span class="font-weight-bold">Subtotal : </span>$<%= item.product.price * item.quantity %></span>
+      </li>
+    </a>
+    <% } %>
+</ul>
+<!-- Order Items -->
