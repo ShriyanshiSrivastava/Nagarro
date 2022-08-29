@@ -1,0 +1,49 @@
+const passport = require('passport');
+const GoogleStratergy = require('passport-google-oauth20');
+const User = require('../models/user-model');
+const keys = require('./keys');
+
+// serializing the user
+// passport.serializeUser(User.serializeUser());
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+})
+
+// deserializing the user
+// passport.deserializeUser(User.deserializeUser());
+passport.deserializeUser((userId, done) => {
+    User.findById(userId).then((user) => {
+        done(null, user);
+    });
+});
+
+passport.use(new GoogleStratergy({
+    callbackURL : '/auth/google/redirect',
+    clientID : keys.google.clientId,
+    clientSecret : keys.google.clientSecret
+    // scope: ['profile'] 
+}, (accessToken, refrestToken, profile, done) => {
+    // passport callback function
+
+    // check if the user already exists
+    User.findOne({googleID : profile.id}).then((user) => {
+        if (user) {
+            // if the user is already in our database
+            console.log(`user exists with details : ${user}`);
+            done(null, user);
+        } else {
+            // if the user is not there in our database then we add him/her to our database
+            new User({
+                googleID : profile.id,
+                firstName : profile.name.givenName,
+                lastName : profile.name.familyName,
+                username : profile.displayName,
+                // profilePic : profile.photos[0].value
+                profilePic : profile._json.picture
+            }).save().then((newUser) => {
+                console.log(`new user : ${newUser}`);
+                done(null, newUser);
+            });
+        }
+    })
+}));
